@@ -1,0 +1,13 @@
+# 安全：绝不上传任何凭证 / 中间产物
+cookies.txt
+*.srt
+transcript*.txt
+subtitle*.json
+sub_https.json
+
+# Python 环境 & 源码（本仓库只发布笔记 HTML）
+venv/
+__pycache__/
+*.py
+.env
+.env.example

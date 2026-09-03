@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 使用 · 素养 · 杂谈 — 结构化笔记</title>
+<style>
+  :root{
+    --bg:#f7f8fa; --card:#ffffff; --ink:#1f2430; --sub:#5b6472;
+    --line:#e6e9ef; --accent:#3b6ef0; --accent2:#7c5cff; --ok:#1f9d6b;
+    --warn:#d9772b; --bad:#d6455b; --chip:#eef2fb;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.7;font-size:15px}
+  .wrap{max-width:960px;margin:0 auto;padding:28px 20px 64px}
+  header.meta{background:linear-gradient(120deg,#3b6ef0,#7c5cff);color:#fff;
+    border-radius:16px;padding:22px 24px;box-shadow:0 8px 26px rgba(59,110,240,.18)}
+  header.meta h1{margin:0 0 6px;font-size:23px;letter-spacing:.3px}
+  header.meta .by{opacity:.92;font-size:14px}
+  header.meta .tags{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+  header.meta .tags span{background:rgba(255,255,255,.18);padding:3px 10px;border-radius:999px;font-size:12.5px}
+  .src{margin-top:10px;font-size:12.5px;opacity:.8}
+  section{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:18px 20px;margin-top:18px}
+  h2{font-size:18px;margin:0 0 12px;display:flex;align-items:center;gap:9px}
+  h2 .n{background:var(--accent);color:#fff;width:26px;height:26px;border-radius:8px;
+    display:inline-flex;align-items:center;justify-content:center;font-size:13px;flex:0 0 auto}
+  h3{font-size:15px;margin:16px 0 6px;color:var(--accent2)}
+  p{margin:8px 0}
+  ul{margin:8px 0;padding-left:20px}
+  li{margin:5px 0}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:680px){.grid{grid-template-columns:1fr}}
+  .card{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:#fcfdff}
+  .card b{color:var(--accent)}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13.5px}
+  th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+  th{background:#f1f4fb;color:var(--sub);font-weight:600}
+  .pill{display:inline-block;padding:1px 8px;border-radius:999px;font-size:12px;font-weight:600}
+  .p-ok{background:#e6f6ee;color:var(--ok)}
+  .p-warn{background:#fdeedf;color:var(--warn)}
+  .p-bad{background:#fce8ec;color:var(--bad)}
+  .p-info{background:var(--chip);color:var(--accent)}
+  .callout{border-left:4px solid var(--accent);background:#f3f6ff;padding:10px 14px;border-radius:0 10px 10px 0;margin:12px 0}
+  .callout.warn{border-color:var(--warn);background:#fff7ee}
+  .callout.bad{border-color:var(--bad);background:#fdeef1}
+  svg{display:block;width:100%;height:auto;margin:8px 0}
+  .foot{margin-top:22px;font-size:12.5px;color:var(--sub);text-align:center;line-height:1.8}
+  code{background:#eef1f7;padding:1px 6px;border-radius:6px;font-size:12.5px}
+  .kbd{font-family:ui-monospace,Consolas,monospace}
+  .xm{color:var(--accent2);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="meta">
+  <h1>AI 使用 · 素养 · 杂谈 — 结构化笔记</h1>
+  <div class="by">来源：B站视频《[SI 100+] AI 使用、素养、杂谈》 · UP主/讲师：Honahec（23 级 刘林嘉）</div>
+  <div class="tags">
+    <span>时长 51:39</span><span>单 P</span><span>SI100+ 课程</span>
+    <span>偏应用 / 素养</span><span>朋辈讲座</span>
+  </div>
+  <div class="src">视频链接：https://www.bilibili.com/video/BV12L8r6MEn9 ｜ 本笔记基于 B站人工字幕（zh 轨）整理，非逐字稿，经语义提炼与结构重组。</div>
+</header>
+
+<!-- 核心脉络 -->
+<section>
+  <h2><span class="n">★</span>一句话脉络：从 Chat 到 Harness 的递进</h2>
+  <p>讲师的整节课主线只有一条：<b>LLM 本质只是「输入文本→输出文本」的语言模型</b>，想让它干复杂活，就得不断「包东西」上去。</p>
+  <svg viewBox="0 0 920 150" role="img" aria-label="递进脉络">
+    <defs>
+      <marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+        <path d="M0,0 L8,3 L0,6 Z" fill="#3b6ef0"/>
+      </marker>
+    </defs>
+    <g font-size="14" font-family="sans-serif">
+      <rect x="10" y="55" width="170" height="44" rx="10" fill="#eef2fb" stroke="#3b6ef0"/>
+      <text x="95" y="82" text-anchor="middle" fill="#1f2430">① Chat 直接聊</text>
+      <line x1="180" y1="77" x2="225" y2="77" stroke="#3b6ef0" marker-end="url(#ar)"/>
+      <rect x="225" y="55" width="190" height="44" rx="10" fill="#eef2fb" stroke="#3b6ef0"/>
+      <text x="320" y="76" text-anchor="middle" fill="#1f2430">② +工具 = Agent</text>
+      <text x="320" y="92" text-anchor="middle" fill="#5b6472" font-size="11">读目录/改文件/跑命令</text>
+      <line x1="415" y1="77" x2="460" y2="77" stroke="#3b6ef0" marker-end="url(#ar)"/>
+      <rect x="460" y="55" width="200" height="44" rx="10" fill="#f1ecff" stroke="#7c5cff"/>
+      <text x="560" y="76" text-anchor="middle" fill="#1f2430">③ +约束 = Harness</text>
+      <text x="560" y="92" text-anchor="middle" fill="#5b6472" font-size="11">Prompt/架构/重试</text>
+      <line x1="660" y1="77" x2="705" y2="77" stroke="#7c5cff" marker-end="url(#ar)"/>
+      <rect x="705" y="55" width="200" height="44" rx="10" fill="#f1ecff" stroke="#7c5cff"/>
+      <text x="805" y="76" text-anchor="middle" fill="#1f2430">④ 闭环 + 验收</text>
+      <text x="805" y="92" text-anchor="middle" fill="#5b6472" font-size="11">证据回灌 / 迭代</text>
+    </g>
+    <text x="10" y="130" font-size="12.5" fill="#5b6472">约束越弱 → 回答越不可控；约束越多 → 结果越好。Harness 不一定要复杂编排，一个带约束的 Prompt 本身就已经是 harness。</text>
+  </svg>
+  <div class="callout">🎯 <b>对你（正在学 AI coding）最直接的一句话</b>：你用的 <span class="xm">WorkBuddy</span> 在讲师的例子里被当作 coding 工具之一（"下载 Codex，或 WorkBuddy，或其他 coding 工具"）。这节课讲的「四个入口」「闭环验收」「放松检查/严收」，正是你现在每天和 WorkBuddy 打交道时该有的心智模型。</div>
+</section>
+
+<!-- 1 -->
+<section>
+  <h2><span class="n">1</span>开场与课程定位</h2>
+  <ul>
+    <li>课件在 <code>Piazza</code> 下载，已上传 PDF；课程后续会上传 B站。</li>
+    <li><b>SI100+ 偏 CS 方向</b>：覆盖 AI 生图、AI 生视频、常用模型、Agent 框架、简单 Harness 介绍，以及大量"需要注意的细节"。</li>
+    <li>定位：偏<b>应用</b>与<b>素养</b>，强调边学边动手；遇到不懂直接问 AI。</li>
+  </ul>
+</section>
+
+<!-- 2 -->
+<section>
+  <h2><span class="n">2</span>从 Chat 到「约束」：为什么你的 AI 答非所问</h2>
+  <h3>现场调研</h3>
+  <p>多数同学只用过 Web Chat（豆包 / DeepSeek），没用过它们的本地软件。讲师提醒：<b>有些困难任务网页端做不了，会逼你下载软件在本地开发。</b></p>
+  <h3>一个最小例子</h3>
+  <ul>
+    <li>问「Python 字典和列表有什么区别」→ 各家答案长度、侧重都不同 → <b>约束弱，回答不可控</b>。</li>
+    <li>加一句「希望可视化」→ 变成双栏布局对比图。</li>
+    <li>再进阶「做一个 PPT/slides 阐释区别」→ 不再是纯文字，<b>生成难度上来了</b>。</li>
+  </ul>
+  <div class="callout">💡 <b>核心结论</b>：LLM 只能输入输出文本。想做复杂任务，必须给它<b>工具</b>；想用好 Agent，必须再给它<b>更多约束</b>。约束多（如"已学完 SI100+、上下文有全部内容、要短答案、复习视角、不追求绝对严谨"）→ 结果明显更好（Grok 的例子）。</div>
+</section>
+
+<!-- 3 -->
+<section>
+  <h2><span class="n">3</span>AI 使用的四级阶梯（你处在哪一级？）</h2>
+  <svg viewBox="0 0 920 230" role="img" aria-label="四级阶梯">
+    <g font-size="13.5" font-family="sans-serif">
+      <rect x="20" y="20" width="880" height="44" rx="10" fill="#eef2fb" stroke="#3b6ef0"/>
+      <text x="36" y="47" fill="#1f2430"><b>L1 Chat</b> · 直接对话。简单问题首选（问 list/dict 区别、Linux 命令），不需读本地文件、无仓库限制、更快。</text>
+      <rect x="20" y="74" width="880" height="44" rx="10" fill="#eef2fb" stroke="#3b6ef0"/>
+      <text x="36" y="101" fill="#1f2430"><b>L2 Project / Workspace</b> · 上传 Sources（40 个文件/整门课）建知识库，新对话仍引用，免重开上下文。网页端即可，无需下载。</text>
+      <rect x="20" y="128" width="880" height="44" rx="10" fill="#f1ecff" stroke="#7c5cff"/>
+      <text x="36" y="155" fill="#1f2430"><b>L3 Coding Agent</b> · Claude Code / Codex：读目录、改文件、跑命令、交付结果。大量本地文件交给它消化。</text>
+      <rect x="20" y="182" width="880" height="44" rx="10" fill="#f1ecff" stroke="#7c5cff"/>
+      <text x="36" y="209" fill="#1f2430"><b>L4 API &amp; Workflow</b> · 接 API 把模型嵌进自己的系统（如自建客服）。需写代码按约定调用，拿结果回传。</text>
+    </g>
+  </svg>
+  <div class="grid">
+    <div class="card"><b>何时用网页 Chat？</b>简单、孤立问题；不想频繁读本地代码。</div>
+    <div class="card"><b>何时开 Project/Agent？</b>文件多（10 录音+100 PPT）、需跨文件消化；Agent 用工具按需读文件名、只读感兴趣的部分。</div>
+  </div>
+  <p class="callout warn">⚠️ 陷阱：已经用上 Codex 的同学，容易"什么都用 Codex"。简单问题仍该回到网页 Chat——更快、无仓库负担。</p>
+</section>
+
+<!-- 4 -->
+<section>
+  <h2><span class="n">4</span>概念祛魅：LLM / Agent / 闭环 / MCP</h2>
+  <h3>结果不只取决于模型</h3>
+  <p>同样一个任务，最终效果取决于这一层编排：<b>上下文给了什么 → 工具能不能用 → Harness(Prompt) 与架构怎么设计 → 失败怎么重试 → 有没有证据验收</b>。</p>
+  <h3>Agent 闭环（细分四步）</h3>
+  <table>
+    <tr><th>步骤</th><th>做什么</th><th>为什么重要</th></tr>
+    <tr><td>① 读上下文</td><td>收到目标先读上下文</td><td>上下文长度有限，必须持续控制，别一次塞爆</td></tr>
+    <tr><td>② 选工具</td><td>决定调用哪个工具</td><td>工具可用性直接决定能力边界</td></tr>
+    <tr><td>③ 执行一步看结果</td><td>跑一步，观察输出</td><td>Evidence（证据）来自真实执行结果</td></tr>
+    <tr><td>④ 决定继续/回退/交人</td><td>下一轮迭代或停</td><td>Feedback Loop：把证据回灌 LLM 再迭代</td></tr>
+  </table>
+  <h3>概念辨析（高频考点）</h3>
+  <table>
+    <tr><th>概念</th><th>定义 / 区别</th></tr>
+    <tr><td><b>LLM</b></td><td>大语言模型，本质"高质量下一步预测器"：预训练（捂住下一个词让模型猜）+ 自回归生成 + Transformer。</td></tr>
+    <tr><td><b>Agent</b></td><td>在 LLM 外补上工具/上下文/编排，变成"能完成任务的实体"。</td></tr>
+    <tr><td><b>Tool Calling / Function Calling</b></td><td><span class="p-info">Agent→LLM 这一层</span>：LLM 推理完告诉 Agent "我要调哪个工具"。</td></tr>
+    <tr><td><b>MCP</b></td><td><span class="p-info">Agent→工具这一层</span>：Agent 与具体工具沟通的协议（如网页搜索工具）。</td></tr>
+    <tr><td><b>Harness</b></td><td>约束 Agent 行为的工程（Prompt 编排 + loop engineering + 架构）。简单带约束的 Prompt 即 harness，未必是复杂文件夹。</td></tr>
+    <tr><td><b>instruct / IT</b></td><td>指令微调：让模型说话更符合人类偏好、像人话。</td></tr>
+  </table>
+  <div class="callout">🧪 <b>两个 Hands-on</b>：① 让 GPT 生成"名字按字母序排序"的 Python 代码（推荐顺手下载 Codex）；② 多轮设计 + 联网搜索，把 Agent 完成过程截图。完成②说明你已进入 L3。</div>
+</section>
+
+<!-- 5 -->
+<section>
+  <h2><span class="n">5</span>厂商与模型地图（素养部分）</h2>
+  <table>
+    <tr><th>厂商</th><th>产品/模型</th><th>要点</th></tr>
+    <tr><td>OpenAI</td><td>GPT 家族 / ChatGPT</td><td>GPT=生成式预训练变换器；ChatGPT 是产品。讲师称"大善人"（商战狂送额度）。</td></tr>
+    <tr><td>Anthropic</td><td>Claude（Haiku/Sonnet/Opus）</td><td>名字映射诗的长度=强度。封号偏多但可用，Claude Code 封号比 Codex 多。</td></tr>
+    <tr><td>Google</td><td>Gemini / NotebookLM</td><td>曾强（2 Pro/2.5 Pro，2M 上下文），近一年没打赢"玉三家"；<b>NotebookLM/Gemini Notebook 仍好用</b>。读音 Gem-i-ni。</td></tr>
+    <tr><td>xAI</td><td>Grok</td><td>已被 SpaceX 合并（一堆 x）。</td></tr>
+    <tr><td>字节</td><td>豆包 / 飞书</td><td>豆包偏教育+多模态；豆包输入法/语音输入 API（火山引擎录音识别 2.0）质量高。</td></tr>
+    <tr><td>阿里</td><td>通义千问 / 万象（视频）</td><td>千问 3.8 视觉能力不错；喜欢"千/万"命名。</td></tr>
+    <tr><td>MiniMax</td><td>—</td><td>多模态能力不错。</td></tr>
+    <tr><td>Agent 公司</td><td>Cursor / Pi / Codex / Claude Code</td><td>Pi 理念极简、需自定制，<b>新手不推荐</b>。现多用 Codex。</td></tr>
+    <tr><td>本地 UI</td><td>Cherry Studio / Chatbox / Open WebUI / Lobe Chat</td><td>好处：自由管理/裁剪上下文；痛点：生态 dirty work，需自己适配模型。</td></tr>
+  </table>
+  <div class="callout bad">🚫 <b>查资料绝不推荐 Gemini 网页版</b>：deep research 也答不对"方正书版 ZK 注解（=自控注解）"，但同模型在 <b>AI Studio</b> 能答对——纯属网页版搜索工具缺陷。其他任何地方（ChatGPT/豆包/AI Studio）都答对。</div>
+  <h3>Computer Use & Record/Skill</h3>
+  <ul>
+    <li><b>Computer Use</b>（Codex/Claude Code）：直接读进程信息判断下一步（非截图）来操控电脑；可让浏览器自动填密码登录拿 cookie 干活。</li>
+    <li><b>Record & Skill</b>：观察你做一件事并录成可复用 skill，配合 Computer Use 跨应用自动化。</li>
+  </ul>
+</section>
+
+<!-- 6 -->
+<section>
+  <h2><span class="n">6</span>工具链与选型细节</h2>
+  <ul>
+    <li><b>自建网站/前端</b>：用 <code>Playwright</code>（网页自动化最常用，默认下 Chromium；Windows 用本地 Edge 省一次下载）。告诉 AI 用它能用得更好。</li>
+    <li><b>SOTA</b> = State of the Art（当下某领域之最）。软工 benchmark 看 <code>DeepSWE</code>：图越右上越好。</li>
+    <li><b>模型例子</b>：GPT-5.6 Sol（综合 73% 正确率 / $8.39，低耗 45%）；DeepSeek V4 Pro（~63% / 低开销，但<b>当日宣布涨价</b>、已不如 5.6）；Claude Opus 高耗上限高。</li>
+  </ul>
+  <div class="callout warn">💰 <b>中转站科普</b>：上游订阅顶级会员（如 ChatGPT $200/月=20 倍额度，≈¥1000 买到 $16000 额度），再分发 token 盈利。Codex 无法登录可接第三方 API。几个同学合买 $200 方案比 $100（一周仅 50 次 Pro）划算。注意：ChatGPT 上下文 free/plus=272K，pro=400K。</div>
+  <p class="callout bad">⚠️ <b>中转站/第三方客户端会"降智"</b>：GPT/Claude <b>不公开思维链</b>（在云端加密），切模型或非官方客户端不认字段 → 智商可见下降；多个上下文注入（如"我叫 Kilo Code"+"我叫 Codex"）会让模型困惑。</p>
+</section>
+
+<!-- 7 -->
+<section>
+  <h2><span class="n">7</span>个性化与使用心法</h2>
+  <ul>
+    <li><b>Personalization</b>：设 Style/Tone（高效简洁务实、减 Emoji、结构化）；<b>关掉 FastAnswers</b>（降质来源）；Codex 里放入所有项目，头脑风暴更契合。</li>
+    <li><b>笔记模式语言风格</b>：要求输出"随时可复制进 Obsidian"，别再转述一遍（讲师个人偏好，可借鉴）。</li>
+    <li><b>任务预估</b>：复杂探索 → 拉到 Pro 去干别的；要快 → High/Extra High；急事 → 手机语音（豆包）。很少用 Instant/Medium。</li>
+    <li><b>细分需求自己开发</b>：Hermes/OpenClaw 记忆理念好但用便宜模型上限低；大厂 Agent 架构已成熟，直接用大厂；长期个人管理类细分需求再自研。</li>
+  </ul>
+</section>
+
+<!-- 8 -->
+<section>
+  <h2><span class="n">8</span>信息质量与学术诚信（重点）</h2>
+  <h3>放松检查 vs 严格验收</h3>
+  <ul>
+    <li>有些事<b>难做易查</b>：设计"易检查的门槛"，就能放心让 Agent 一次搞定。例：Playwright 截图验证 UI 修复是否生效 → 形成"修复→截图验收"闭环。</li>
+    <li><b>必须严收</b>：你觉得"这东西很重要"时，自然严格检查。别对所有产出都人工兜底（AI 量大时你根本查不过来）。</li>
+  </ul>
+  <div class="callout bad">🎓 <b>学术诚信（大学红线）</b>：区分三件事——
+    <br>① <b>产品 vs 学术</b>：ChatGPT 是好产品，但不是好"学术"——学术要明确定义问题、基于他人工作、有完整验收与实验。
+    <br>② <b>课程作业 vs 个人项目</b>：<b>课程作业绝不用 AI 完成</b>。一次外包 = 把整门课思考滚雪球式外包，恶性循环。
+    <br>③ 产品思维（"ChatGPT 超厉害"）不要带进科研。</div>
+  <h3>提升信息质量（两个维度）</h3>
+  <div class="grid">
+    <div class="card"><b>产出</b>：用 <code>Markdown</code> 而非 Word。Word 背后结构冗余难理解；文本模型对结构化文本接受度好（信院同学尤其）。</div>
+    <div class="card"><b>获取</b>：去 <span class="kbd">X</span> 关注 Anthropic AI 等一手源，别只从公众号梗图/夸张标题得知新模型。至少搞清：有哪些模态、上下文多大、这代侧重点、能干什么。</div>
+  </div>
+  <p>"保留思考"不是鸡汤——要拆成可执行方案：主动提升信息质量 + 保持敬畏，自然不丢思考。</p>
+</section>
+
+<!-- 9 -->
+<section>
+  <h2><span class="n">9</span>收尾与 Bonus</h2>
+  <ul>
+    <li><b>生图彩蛋</b>：有同学让 Agent 调工具写代码生成 SVG → 转 PNG（非直接生图），讲师点名表扬——这正是"给工具"的正确姿势。</li>
+    <li><b>Bonus（七夕）</b>：用"星图"做完整项目：头脑风暴 → 收窄约束 → 上传哪些文件 → Agent 怎么自查迭代 → 交付什么产品。</li>
+    <li><b>祛魅总结</b>：不先背定义，从 Chat 逐步包出 Agent/Harness；细节（如 DeepSeek 不支持多模态）用脑子记、用中体会。配好任一 Agent 的自定义（如 DeepSeek 传图报错→想到它没视觉能力）。</li>
+  </ul>
+</section>
+
+<div class="foot">
+  本笔记由视频 B站人工字幕（zh 轨，约 2 万字）经语义提炼与结构重组生成，非逐字稿，部分术语按语境做了规整。<br>
+  原始视频：BV12L8r6MEn9《[SI 100+] AI 使用、素养、杂谈》· 讲师 刘林嘉（Honahec）<br>
+  生成方式：B站字幕抓取（Cookie 登录）→ SRT 解析 → LLM 结构化整理。未使用 ffmpeg / whisper / 云端 LLM。
+</div>
+
+</div>
+</body>
+</html>

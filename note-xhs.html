@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大学生计算机素养合集 · 小红书风长图文</title>
+<style>
+  :root{--bg:#fff5f7;--card:#fff;--ink:#2b2b2b;--sub:#7a7a7a;--pink:#ff4d6d;--ora:#ff8a3d;--soft:#fff0f4;--yel:#fff8e1;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.85}
+  .phone{max-width:520px;margin:0 auto;padding:0 0 50px;background:#fff;min-height:100vh;box-shadow:0 0 30px rgba(255,77,109,.08)}
+  .cover{background:linear-gradient(160deg,#ff4d6d,#ff8a3d);color:#fff;padding:46px 26px 36px;text-align:center}
+  .cover .kicker{font-size:13px;letter-spacing:2px;opacity:.9}
+  .cover h1{font-size:25px;margin:12px 0 10px;line-height:1.4;font-weight:800}
+  .cover .sub{font-size:13.5px;opacity:.95}
+  .cover .tags{margin-top:14px;font-size:12px;opacity:.92}
+  .body{padding:22px 22px 10px}
+  .lead{background:var(--soft);border-radius:14px;padding:16px 18px;font-size:14.5px;margin:0 0 22px}
+  .lead b{color:var(--pink)}
+  .part{margin:26px 0}
+  .part .h{font-size:18px;font-weight:800;color:var(--pink);margin:0 0 4px;display:flex;align-items:center;gap:7px}
+  .part .hs{font-size:12.5px;color:var(--sub);margin:0 0 12px}
+  p{margin:10px 0;font-size:14.5px}
+  .tip{background:var(--yel);border-left:4px solid var(--ora);border-radius:0 10px 10px 0;padding:11px 14px;margin:12px 0;font-size:14px}
+  .tip b{color:var(--ora)}
+  .quote{background:linear-gradient(135deg,#fff0f4,#fff8e1);border-radius:12px;padding:14px 16px;margin:14px 0;text-align:center;font-size:15.5px;font-weight:700;color:#c2185b;line-height:1.6}
+  .list{margin:10px 0;padding-left:20px;font-size:14.5px}
+  .list li{margin:7px 0}
+  .chip{display:inline-block;background:var(--soft);color:var(--pink);border-radius:8px;padding:2px 9px;font-size:12.5px;margin:2px 4px 2px 0;font-weight:600}
+  .wall{background:#2b2b2b;color:#fff;border-radius:14px;padding:18px 20px;margin:24px 0}
+  .wall .t{color:var(--ora);font-size:13px;letter-spacing:1px;margin-bottom:10px}
+  .wall div{margin:11px 0;font-size:14.5px;line-height:1.6}
+  .wall .q{color:#ffd54f;font-weight:700}
+  .end{background:var(--soft);border-radius:14px;padding:18px;margin:26px 0 10px;text-align:center}
+  .end .big{font-size:16px;font-weight:800;color:var(--pink)}
+  .end p{font-size:14px;margin:8px 0}
+  .hash{text-align:center;font-size:13px;color:var(--ora);margin:18px 0;line-height:2}
+  .src{font-size:11.5px;color:var(--sub);text-align:center;padding:14px 22px 0;line-height:1.7}
+  .cut{text-align:center;color:var(--sub);font-size:11px;margin:26px 0 4px;letter-spacing:1px}
+  .cut::before,.cut::after{content:"──";margin:0 8px;opacity:.4}
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <div class="cover">
+    <div class="kicker">计算机基础自救指南</div>
+    <h1>🤯 大一就知道这些计算机思维<br>能少走三年弯路</h1>
+    <div class="sub">AI 怎么用才不白用 · 抽象到底是什么 · 怎么学任何新东西 · 真正拉开差距的是心态</div>
+    <div class="tags">#计算机 #编程入门 #大学生干货 #AI工具</div>
+  </div>
+
+  <div class="body">
+    <div class="cut">PART 1</div>
+    <div class="part">
+      <div class="h">🔥 AI 不是搜索引擎，是「协作者」</div>
+      <div class="hs">很多人用 AI 的方式，从第一天就错了</div>
+      <p>你现在大概率在 <b>L1</b>：打开就问、复制答案。但真正会用的人是这样的——</p>
+      <ul class="list">
+        <li><b>L1 直接用</b>：把 AI 当高级搜索引擎</li>
+        <li><b>L2 会写提示词 + 调工具</b>：让它查资料、跑代码、读文件</li>
+        <li><b>L3 会搭 Agent / Harness</b>：把 AI 套上约束和流程，自动干活</li>
+        <li><b>L4 闭环验收</b>：不 blindly 信，自己验证每一步对不对</li>
+      </ul>
+      <div class="tip"><b>概念祛魅（记住这 5 个就够）：</b><br>
+      <span class="chip">LLM</span> 本质=预测下一个字<br>
+      <span class="chip">Agent</span> = LLM + 工具 + 循环<br>
+      <span class="chip">Tool Calling</span> = 让 AI 调你的函数<br>
+      <span class="chip">MCP</span> = 工具的统一接口规范（少写适配）<br>
+      <span class="chip">Harness</span> = 给 Agent 套约束的壳子</div>
+      <div class="quote">「把 AI 当不可靠的协作者——<br>关键输出一律过你自己的确定性校验。」</div>
+      <p>还有个坑：别用某些「中转站」网页版查资料。因为思维链不公开，第三方客户端智商容易掉一截。学术诚信也别碰红线——能用 Markdown 就别死磕 Word，去一手源看别只看二手转述。</p>
+    </div>
+
+    <div class="cut">PART 2</div>
+    <div class="part">
+      <div class="h">🧱 抽象：计算机最底层的思维</div>
+      <div class="hs">看懂这一个词，你写代码会长脑子</div>
+      <p><b>定义：</b>隐藏当前不需要关心的细节，只暴露完成任务要用的接口。细节没消失，只是「这层不用管它」。</p>
+      <ul class="list">
+        <li><b>GUI vs 命令行</b>：都是对电脑的抽象，谁也不比谁高级。命令行擅长批量/组合/自动化。</li>
+        <li><b>程序是什么</b>：不是桌面图标。源码→解释器→字节码→进内存叫「进程」→CPU 跑机器指令。</li>
+        <li><b>文件是什么</b>：底层就是一串字节。按 UTF-8 解释=文本，按格式=图片/压缩包/EXE。<b>改后缀名不改数据本身</b>。</li>
+        <li><b>环境 vs 依赖</b>：依赖=要借的库（import 的东西）；环境=跑起来要的外部条件。所以才用 venv/uv 隔离。</li>
+      </ul>
+      <div class="quote">「编程的过程，一边在用别人给的抽象，<br>一边在造自己的抽象。」</div>
+      <div class="tip"><b>抽象会「漏」：</b>出问题时底层会冒头——找不到模块（用错环境）、缺 DLL、打开的文件删不掉（句柄被占）。<b>看懂报错=知道自己在哪一层。</b></div>
+    </div>
+
+    <div class="cut">PART 3</div>
+    <div class="part">
+      <div class="h">🧭 怎么学任何「陌生东西」</div>
+      <div class="hs">一个万能循环，套所有新框架/新语言/新项目</div>
+      <p>面对看不懂的东西，别慌，走这四步：</p>
+      <ul class="list">
+        <li><b>① 定目标</b>：要精细。「先让机器人动起来」比「学会 ROS2」好执行。</li>
+        <li><b>② 建模型</b>：它现在怎么工作？来源=已有知识 / 读文档(README、官方教程) / 搜+问 AI。<b>模型一开始可以很粗糙。</b></li>
+        <li><b>③ 试探</b>：带着预测去操作。微小+可逆才是好试探；<b>报错是好事</b>，是系统给你新信息；重启能救急但不长知识。</li>
+        <li><b>④ 验证</b>：符合预期→模型成立；不符合→改模型，再循环。</li>
+      </ul>
+      <div class="tip"><b>学指针卡住？</b>往下挖一层到「内存」：变量=一块内存，指针=存地址，<code>*p</code>=顺着地址找到那块。够解释问题就停，<b>不用挖到晶体管</b>。接陌生 GitHub 项目？先读 README→跑通 demo→顺着入口读，别被目录吓退。</div>
+    </div>
+
+    <div class="cut">PART 4</div>
+    <div class="part">
+      <div class="h">💡 真正拉开差距的，是心态</div>
+      <div class="hs">前面是「术」，这是「道」</div>
+      <p>配环境配两小时还在报错——你会有两种解释：</p>
+      <ul class="list">
+        <li>A：「这么简单都搞不定，我太菜」→ 焦虑、不敢碰</li>
+        <li>B：「真学到东西了」→ 下次愿碰更复杂的</li>
+      </ul>
+      <p><b>同一个挫折，解释不同，学习轨迹就不同。</b>高手和新手的差距，不是某次顿悟，是无数次微小积累。身边统计学最大因素就一个：<b>投入时间</b>。怎么让时间投得多？让学习本身「值得继续」——代码跑通那一下，成就感会滚雪球。</p>
+      <div class="quote">「乐观是一种不言自明的公理：<br>这里有个暂时不知道的原因，我能继续观察、搜索、试探。<br>哪怕今天没解决，也比开始多知道一些。」</div>
+      <p>别人基础好，别比「我差多少」，比「再积累一点会多会多少」。面对没见过的东西愿意搞明白，遇到问题知道一点点缩小范围——哪怕暂时不会，也别急着给自己下「我不行」的结论。</p>
+    </div>
+
+    <div class="wall">
+      <div class="t">✨ 金句墙（截图存）</div>
+      <div><span class="q">「</span>编程一边用别人的抽象，一边造自己的抽象。<span class="q">」</span></div>
+      <div><span class="q">「</span>把 AI 当不可靠协作者，关键输出过自己的校验。<span class="q">」</span></div>
+      <div><span class="q">「</span>某一层不懂，适当往下看一层；够用即止。<span class="q">」</span></div>
+      <div><span class="q">「</span>高手差距=无数微小积累，不是某次顿悟。<span class="q">」</span></div>
+      <div><span class="q">「</span>乐观是公理：今天没解决，也比开始多知道一些。<span class="q">」</span></div>
+    </div>
+
+    <div class="end">
+      <div class="big">📮 写在最后</div>
+      <p>这 4 块我自己在补基础时天天用：写代码想分层、用 AI 不盲信、学新东西走循环、卡住就管理正反馈。</p>
+      <p>你中了几条？评论区聊聊 👇<br>觉得有用点个 <b>收藏</b>，下次卡 bug 翻出来看。</p>
+    </div>
+
+    <div class="hash">
+      #计算机基础 #编程入门 #大学生必看 #AI工具怎么用 #抽象思维 #学习方法 #干货分享 #代码 #Python
+    </div>
+
+    <div class="src">
+      📌 本笔记为二次创作，内容整理自 B站 <b>@Honahec</b> 的「SI100+ 朋辈分享」系列（含《AI 使用/素养/杂谈》《一些重要的计算机素养》两期），已按个人理解提炼重写，侵权删。原视频讲解更香，建议去 B站看完整版～
+    </div>
+  </div>
+</div>
+</body>
+</html>
